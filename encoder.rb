@@ -1,3 +1,14 @@
+puts "Do you want to encode or decode?"
+code_type = gets.chomp
+
+puts "What is the number of letters used to offset the message (i. e. 5,8,13 etc)?"
+letter_offset = Integer(gets.chomp)
+
+if code_type == "decode"
+	letter_offset = -1 * letter_offset
+end	
+
+puts code_type, letter_offset
 #grades = { "Jane Doe" => 10, "Jim Doe" => 6 }
 #puts grades["Jane Doe"] # => 0
 
@@ -25,7 +36,7 @@ letter_number = hash1[letter] #Letter number contains the number of each letter 
 if letter_number == 27
 	then coded_letter = 27 # letter_number 27 refers to the space and is maintained as such
 elsif	
-coded_letter = (letter_number + 13)%26 #adds 13 to letternumber to encode the letter NOTE that any positive number could be added
+coded_letter = (letter_number + letter_offset)%26 #adds 13 to letternumber to encode the letter NOTE that any positive number could be added
 #if coded_letter > 26 
 #	coded_letter = coded_letter %26 #returns the remainder if coded letter is >26
 #elsif coded_letter < 0
