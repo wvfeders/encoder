@@ -25,10 +25,14 @@ letter_number = hash1[letter] #Letter number contains the number of each letter 
 if letter_number == 27
 	then coded_letter = 27 # letter_number 27 refers to the space and is maintained as such
 elsif	
-coded_letter = letter_number + 13 #adds 13 to letternumber to encode the letter NOTE that any positive number could be added
-if coded_letter > 26 
-	coded_letter = coded_letter %26 #returns the remainder if coded letter is >26
-end	
+coded_letter = (letter_number + 13)%26 #adds 13 to letternumber to encode the letter NOTE that any positive number could be added
+#if coded_letter > 26 
+#	coded_letter = coded_letter %26 #returns the remainder if coded letter is >26
+#elsif coded_letter < 0
+#	coded_letter = coded_letter%26
+#end
+end
+if coded_letter == 0 then coded_letter = 26
 end
 
 hash3 = hash1.invert #hash3 inverts hash1 so we can extract a letter from a number input
