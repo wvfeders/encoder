@@ -1,9 +1,5 @@
-inmessage = Array.new 
-coded_message = Array.new
-
-
-
-
+inmessage = Array.new #establishes the inmessage aray
+out_message = Array.new #establishes the out_message array
 
 puts "Do you want to encode or decode?"
 code_type = gets.chomp  #User has to input whether the program should encode or decode
@@ -53,8 +49,8 @@ encoded_letter = hash3[coded_letter_number] #retrieves a letter from hash3 depen
 #puts
 
 #newcode 121117 
-inmessage = inmessage.push(letter)
-coded_message = coded_message.push(encoded_letter)
+inmessage = inmessage.push(letter) #collects the input letters into ana array
+out_message = out_message.push(encoded_letter) #collects the utput leters into an array
 #puts message
 #end new code 121117
 end
@@ -62,8 +58,8 @@ end
 #print inmessage.join
 puts
 puts "Your input message is:"
-print inmessage.join
+print inmessage.join #prints the concatenated letters of inmessage array
 puts "\n\n"
 puts "Your output message is:"
-print  coded_message.join
+print  out_message.join #prints the concatenaeted letters of the out_message array
 puts "\n\n "
