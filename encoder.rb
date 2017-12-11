@@ -1,3 +1,10 @@
+inmessage = Array.new 
+coded_message = Array.new
+
+
+
+
+
 puts "Do you want to encode or decode?"
 code_type = gets.chomp  #User has to input whether the program should encode or decode
 
@@ -8,13 +15,13 @@ if code_type == "decode"
 	letter_offset = -1 * letter_offset #the sign of the letter_offset value is reversed if program is decoding 
 end	
 
-puts code_type, letter_offset #checks code_type and offset
+puts code_type, "Code will be offset #{letter_offset} letters" #checks code_type and offset
 
 
 puts "Type your message in lower case letters without punctuation: " #code only works with lower case
 message = gets.chomp 
 split_letters = message.split('') #divides message into individual letters and spaces
-p split_letters.count #counts total number of letters and spaces
+#p split_letters.count #counts total number of letters and spaces
 count=0
 (split_letters.count).times do #loops program the number of letters and spaces
 
@@ -42,7 +49,21 @@ end
 hash3 = hash1.invert #hash3 inverts hash1 so we can extract a letter from a number input
 
 encoded_letter = hash3[coded_letter_number] #retrieves a letter from hash3 depending on the value of coded_letter_number 
-print letter, " ", encoded_letter, " " #prints initial message and spaces and encoded letter vertically
-puts
+#print letter, " ", encoded_letter, " " #prints initial message and spaces and encoded letter vertically
+#puts
+
+#newcode 121117 
+inmessage = inmessage.push(letter)
+coded_message = coded_message.push(encoded_letter)
+#puts message
+#end new code 121117
 end
 
+#print inmessage.join
+puts
+puts "Your input message is:"
+print inmessage.join
+puts "\n\n"
+puts "Your output message is:"
+print  coded_message.join
+puts "\n\n "
